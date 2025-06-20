@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beer to the Moon - The First Space Beer Meme Coin">
+    <meta name="keywords" content="meme coin, beer, space, moon, crypto, coin, defi, pump.fun">
+    <title>Beer to the Moon 🚀 | Space Beer Meme Coin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #ff6b6b;
+            --background-dark: #000000;
+            --text-light: #ffffff;
+            --text-gray: #94a3b8;
+            --accent-color: #ffd700;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            height: 100%;
+            background: var(--background-dark);
+            position: relative;
+            z-index: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        #space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 107, 107, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .buy-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            color: var(--background-dark);
+            padding: 1.2rem 3rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--accent-color);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .tokenomics-list {
+            list-style: none;
+        }
+
+        .tokenomics-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .tokenomics-list li::before {
+            content: "🍺";
+            margin-right: 0.5rem;
+        }
+
+        .tokenomics-list li.no-emoji::before {
+            content: "";
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .twitter-link {
+            color: var(--text-light);
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .twitter-link:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+
+            .tagline {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="space-bg"></canvas>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Beer to the Moon 🚀</h1>
+            <p class="tagline">The First Space Beer Meme Coin!</p>
+            <a href="https://pump.fun/your-coin-link" class="buy-button" target="_blank">Buy $BNAUT</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">About Our Project</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>What is $BNAUT ?</h3>
+                        <p>The first meme coin that combines the joy of beer with the excitement of space exploration! We're taking beer to the moon, one coin at a time. Join our community of beer-loving space enthusiasts!</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Why Choose Us?</h3>
+                        <ul class="tokenomics-list">
+                            <li>First space-themed beer meme coin</li>
+                            <li>Community-driven development</li>
+                            <li>Open to community ideas!</li>
+                            <li>Regular community events</li>
+                            <li>Fair launch – no Pre-Sale</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Coinomics</h3>
+                        <ul class="tokenomics-list">
+                            <li>Total Supply: 1,000,000,000 coins</li>
+                            <li>95%: Launched publiclyvia pump.fun bonding curve</li>
+                            <li>⚠️5%: Creator wallet (unlocked)</li>
+                            <li style="list-style: none; margin-left: 1.5em; color: #ccc; font-size: 0.98em;" class="no-emoji">- Creator can hold, sell, or use them freely.</li>
+                            <li style="list-style: none; margin-left: 1.5em; color: #ccc; font-size: 0.98em;" class="no-emoji">- Creator may also buy more coins later from the public market like anyone else.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="social-links">
+        <a href="https://twitter.com/BeernautCoin" class="twitter-link" target="_blank">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BeernautCoin. All rights reserved. 🍺🚀</p>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('space-bg');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        class Star {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.radius = Math.random() * 1.2;
+                this.alpha = Math.random();
+                this.alphaChange = 0.005 + Math.random() * 0.01;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = `rgba(255,255,255,${this.alpha.toFixed(2)})`;
+                ctx.fill();
+                this.alpha += this.alphaChange;
+                if(this.alpha <= 0.2 || this.alpha >= 1) this.alphaChange *= -1;
+            }
+        }
+
+        class DriftObject {
+            constructor(imgSrc, sizeRange, speedRange) {
+                this.img = new Image();
+                this.img.src = imgSrc;
+                this.size = sizeRange[0] + Math.random() * (sizeRange[1] - sizeRange[0]);
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * speedRange;
+                this.vy = (Math.random() - 0.5) * speedRange;
+                this.angle = Math.random() * 2 * Math.PI;
+                this.va = (Math.random() - 0.5) * 0.001;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.angle += this.va;
+
+                if(this.x > width + this.size) this.x = -this.size;
+                else if(this.x < -this.size) this.x = width + this.size;
+                if(this.y > height + this.size) this.y = -this.size;
+                else if(this.y < -this.size) this.y = height + this.size;
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.drawImage(this.img, -this.size/2, -this.size/2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        const images = {
+            beer: 'BeerMug.png',
+            planet1: 'https://i.imgur.com/Ijrc2Fb.png',
+            planet2: 'https://i.imgur.com/evhDFRz.png',
+            astronaut: 'https://i.imgur.com/Br3xVQQ.png',
+        };
+
+        const stars = [];
+        for(let i=0; i<200; i++) stars.push(new Star());
+
+        const beers = [];
+        for(let i=0; i<30; i++) beers.push(new DriftObject(images.beer, [30,60], 0.3));
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            stars.forEach(s => s.draw());
+
+            beers.forEach(b => {
+                b.update();
+                b.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        const beerMugImageLoader = new Image();
+        beerMugImageLoader.src = images.beer;
+        beerMugImageLoader.onload = () => {
+            animate();
+        };
+        beerMugImageLoader.onerror = () => {
+            console.error("Failed to load BeerMug.png. Please ensure it's in the same directory and the filename is correct, and consider if its background is transparent for best visual results.");
+        };
+    </script>
+</body>
+</html> 
